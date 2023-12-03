@@ -31,6 +31,7 @@ for line in lines:
 print(file_dict) 
 
 games = file_dict
+print(games)
 
 # loop
 possible_bag = ""
@@ -41,7 +42,7 @@ options = ["1 blue", "2 blue", "3 blue", "4 blue",
 for ID in games:
     for number in ID:
         if value == options:
-            possible_bag += "Ok"
+            possible_bag.append(key)
 pos = possible_bag
 print(pos)
 
