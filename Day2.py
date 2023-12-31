@@ -97,7 +97,7 @@ def read_game(game):
     game = game.split(":")
     game_id = game[0].split()[1]
     shows = game[1].split(";")
-    for i, show in enumerate(shows):
+    for i, show in enumerate(shows): #go throught list but know index and item -> returns pair 
         result.append({"blue": 0, "red": 0, "green": 0})
         for draw in show.split(","):
             count, color = draw.strip().split(" ")

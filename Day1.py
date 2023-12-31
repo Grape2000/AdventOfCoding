@@ -71,3 +71,36 @@ print(digit_sum)
 
 ###############################################
 
+########## 2 #########
+digits = {
+    "one": "1",
+    "two": "2",
+    "three": "3",
+    "four": "4",
+    "five": "5",
+    "six": "6",
+    "seven": "7",
+    "eight": "8",
+    "nine": "9"
+}
+
+def replace_digits(s, digits):
+    for word, number in digits.items():
+        new_word = word[:-1] + number + word[-1:]
+        s = s.replace(word, new_word)
+    return s
+
+def extract_ints(s):
+    return [c for c in s if c.isdigit()]
+
+calibration = []
+with open("Day1.txt", "r") as data:
+    for line in data.readlines():
+        line = replace_digits(line, digits)
+        ints = extract_ints(line)
+        value = int(ints[0] + ints[-1])
+        calibration.append(value)
+
+s = sum(calibration)
+
+print(s)
